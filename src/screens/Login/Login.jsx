@@ -2,10 +2,13 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import Cookies from "js-cookie";
+import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({ email: "", password: "" });
+
+  const imageUrl = process.env.PUBLIC_URL + "/어-맛! 로고.png";
 
   const handleSubmit = async () => {
     try {
@@ -31,43 +34,61 @@ const Login = () => {
   };
   return (
     <div className="wrapper">
-      <div className="input-h1">
-        <h1>
+      <div className="content">
+        <div className="icon">
           <Link to="/">
-            <span>ATASTE</span>
+            <img
+              width={"140px"}
+              height={"140px"}
+              src={imageUrl}
+              alt="어맛!로고"
+            />
           </Link>
-        </h1>
-      </div>
-      <div className="input">
-        <input
-          type="text"
-          placeholder="이메일"
-          value={loginData.email}
-          onChange={(e) =>
-            setLoginData({ ...loginData, email: e.target.value })
-          }
-        />
-      </div>
-      <div className="input">
-        <input
-          type="password"
-          placeholder="비밀번호"
-          value={loginData.password}
-          onChange={(e) =>
-            setLoginData({ ...loginData, password: e.target.value })
-          }
-        />
-      </div>
-      <div className="button">
-        <button className="button-submit" onClick={handleSubmit}>
-          로그인
-        </button>
-      </div>
+        </div>
+        <div className="logcontent">
+          <h2>로그인</h2>
 
-      <div className="button">
-        <Link to="/signup">
-          <button className="button-submit">회원가입</button>
-        </Link>
+          <div className="input-container">
+            <div className="image-div">
+              <img src="/at-sign 2.png" alt="@" />
+            </div>
+            <input
+              className="log-input"
+              type="text"
+              placeholder="이메일"
+              value={loginData.email}
+              onChange={(e) =>
+                setLoginData({ ...loginData, email: e.target.value })
+              }
+            />
+          </div>
+          <div className="input-container">
+            <div className="image-div">
+              <img src="/lock 1.png" alt="lock" />
+            </div>
+            <input
+              className="log-input"
+              type="password"
+              placeholder="비밀번호"
+              value={loginData.password}
+              onChange={(e) =>
+                setLoginData({ ...loginData, password: e.target.value })
+              }
+            />
+          </div>
+          <div>
+            <button className="button-submit" onClick={handleSubmit}>
+              로그인
+            </button>
+          </div>
+
+          <div>
+            <span>계정이 없으신가요? </span>&nbsp;
+            <Link to="/signup">
+              <span className="goSignUp">회원가입</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
