@@ -76,3 +76,11 @@ span {
   width: 80%;
   height: 80%;
 }
+.input-container-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  top: -10px;
+  height: 200px;
+}
