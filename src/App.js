@@ -1,17 +1,16 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./screens/Login/Login";
 import Home from "./screens/Home/Home";
 import SearchingList from "./screens/SearchingList/SearchingList";
 import SignUp from "./screens/SignUp/SignUp";
+import Nav from "./screens/Home/Nav";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Link to="/">home </Link> <Link to="/login"> login </Link>
-        <Link to="signup"> signUp </Link>
-        <Link to="searchinglist"> searchingList</Link>
+        <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
