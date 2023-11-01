@@ -4,13 +4,12 @@ import Login from "./screens/Login/Login";
 import Home from "./screens/Home/Home";
 import SearchingList from "./screens/SearchingList/SearchingList";
 import SignUp from "./screens/SignUp/SignUp";
-import Nav from "./screens/Home/Nav";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav />
+        
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />

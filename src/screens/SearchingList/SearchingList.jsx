@@ -1,7 +1,14 @@
 import React from "react";
 
-const SearchingList = () => {
-  return <div>SearchingList</div>;
-};
+
+function SearchingList() {
+
+  return(
+    <div>
+      <h5 id="topText" >맛집 인기 검색순위</h5>
+    </div>
+  );
+}
+
 
 export default SearchingList;

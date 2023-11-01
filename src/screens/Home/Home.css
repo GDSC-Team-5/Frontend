@@ -4,3 +4,52 @@
   height: 700px;
   padding: 0;
 }
+
+#topText{
+  padding: 50px;
+  color: #F23C3C;
+  ;
+}
+
+#list{
+  list-style-type: none;
+  display: flex;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* #ImgTextContainer{
+  position: relative;
+}
+
+#restaurantText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.user-wrap {
+  /* display: flex; */
+  width: 100%;
+  margin: 10px auto;
+  position: relative;
+  display:inline-block;
+}
+
+.user-wrap img {
+  width: 90%;
+  vertical-align: middle;
+}
+
+.user-text {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  font-size: large;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+}
