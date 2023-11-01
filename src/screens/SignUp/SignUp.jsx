@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
+import "./SignUp.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ const SignUp = () => {
         });
         console.log("response 응답값", response);
         // 응답으로 accessToken이 반환됨. 바로 홈으로 보냄
-        navigate("/");
+        navigate("/login");
 
         setSignupData({
           email: "",
@@ -43,69 +44,102 @@ const SignUp = () => {
       });
     }
   };
+  const imageUrl = process.env.PUBLIC_URL + "/어-맛! 로고.png";
 
   return (
     <div className="wrapper">
-      <div className="input-h1">
-        <h1>
+      <div className="content">
+        <div className="icon">
           <Link to="/">
-            <span>ATASTE</span>
+            <img
+              width={"140px"}
+              height={"140px"}
+              src={imageUrl}
+              alt="어맛!로고"
+            />
           </Link>
-        </h1>
-      </div>
-      <div className="input">
-        <input
-          className="input-email"
-          type="text"
-          placeholder="이메일"
-          value={signupData.email}
-          onChange={(e) =>
-            setSignupData({ ...signupData, email: e.target.value })
-          }
-        />
-      </div>
-      <div className="input">
-        <input
-          className="input-password"
-          type="password"
-          placeholder="비밀번호"
-          value={signupData.password}
-          onChange={(e) =>
-            setSignupData({ ...signupData, password: e.target.value })
-          }
-        />
-      </div>
-      <div className="input">
-        <input
-          className="input-passwordConfirm"
-          type="password"
-          placeholder="비밀번호 확인"
-          value={signupData.passwordConfirm}
-          onChange={(e) =>
-            setSignupData({ ...signupData, passwordConfirm: e.target.value })
-          }
-        />
-        {passwordMatch && (
-          <p className="alert" style={{ color: "red" }}>
-            * 비밀번호가 일치하지 않습니다.
-          </p>
-        )}
-      </div>
-      <div className="input">
-        <input
-          className="input-name"
-          type="text"
-          placeholder="이름"
-          value={signupData.name}
-          onChange={(e) =>
-            setSignupData({ ...signupData, name: e.target.value })
-          }
-        />
-      </div>
-      <div className="button">
-        <button className="button-submit" onClick={handleSubmit}>
-          가입하기
-        </button>
+        </div>
+        <div className="logcontent">
+          <h2>회원가입</h2>
+
+          <div className="input-container">
+            <div className="image-div">
+              <img src="/user 1.png" alt="이름" />
+            </div>
+            <input
+              className="log-input"
+              type="text"
+              placeholder="이름"
+              value={signupData.name}
+              onChange={(e) =>
+                setSignupData({ ...signupData, name: e.target.value })
+              }
+            />
+          </div>
+
+          <div className="input-container">
+            <div className="image-div">
+              <img src="/at-sign 2.png" alt="mail" />
+            </div>
+            <input
+              className="log-input"
+              type="text"
+              placeholder="이메일"
+              value={signupData.email}
+              onChange={(e) =>
+                setSignupData({ ...signupData, email: e.target.value })
+              }
+            />
+          </div>
+          <div className="input-container">
+            <div className="image-div">
+              <img src="/lock 1.png" alt="lock" />
+            </div>
+            <input
+              className="log-input"
+              type="password"
+              placeholder="비밀번호"
+              value={signupData.password}
+              onChange={(e) =>
+                setSignupData({ ...signupData, password: e.target.value })
+              }
+            />
+          </div>
+          <div className="input-container">
+            <div className="image-div">
+              <img src="/lock 1.png" alt="lock" />
+            </div>
+            <input
+              className="log-input"
+              type="password"
+              placeholder="비밀번호 확인"
+              value={signupData.passwordConfirm}
+              onChange={(e) =>
+                setSignupData({
+                  ...signupData,
+                  passwordConfirm: e.target.value,
+                })
+              }
+            />
+          </div>
+          {passwordMatch && (
+            <p className="alert" style={{ color: "red" }}>
+              * 비밀번호가 일치하지 않습니다.
+            </p>
+          )}
+          <div>
+            <button className="button-submit" onClick={handleSubmit}>
+              가입하기
+            </button>
+          </div>
+
+          <div>
+            <span>이미 계정이 있으신가요? </span>&nbsp;
+            <Link to="/login">
+              <span className="goSignUp">로그인</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
