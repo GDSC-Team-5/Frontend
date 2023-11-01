@@ -10,7 +10,7 @@ import {
   Button,
 } from "react-bootstrap";
 
-const navbarContainerStyle = {
+/*const navbarContainerStyle = {
   width: "1920px",
   flexShrink: 0,
   background: "#FFF",
@@ -33,6 +33,36 @@ const searchButtonStyle = {
   marginLeft: "-70px",
   marginTop: "-3.2px",
   marginRight: "128px",
+  flexShrink: 0,
+  backgroundImage: "url('/searchBtn.png')",
+  backgroundSize: "cover",
+  border: "none",
+};*/
+
+const navbarContainerStyle = {
+  margin: "none",
+  width: "1920px",
+  flexShrink: 0,
+  background: "#FFF",
+  boxShadow: "0px 2px 9px 0px rgba(0, 0, 0, 0.20)",
+};
+
+const searchBoxStyle = {
+  marginLeft: "180px",
+  width: "70%",
+  height: "43px",
+  flexShrink: 0,
+  borderRadius: "35rem",
+  background: "#FFF",
+  boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.25)",
+};
+
+const searchButtonStyle = {
+  width: "59px",
+  height: "49.6px",
+  marginLeft: "-70px",
+  marginTop: "-3.2px",
+  marginRight: "300px",
   flexShrink: 0,
   backgroundImage: "url('/searchBtn.png')",
   backgroundSize: "cover",
