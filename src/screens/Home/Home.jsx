@@ -7,7 +7,7 @@ import Nav from "./Nav";
 const restaurantData = [
   {
     id: 1,
-    name: "역곡역",
+    name: "신도림역",
     count: 20,
     image: DefaultImg, //이미지가 안떠요..
 
