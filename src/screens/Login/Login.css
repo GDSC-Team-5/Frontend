@@ -1,0 +1,86 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("../../../public/로그인\,\ 회원가입\ 배경.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  top: 10px;
+}
+.logcontent {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  width: 573px;
+  height: 456px;
+  border-radius: 30px;
+  margin-top: 30px;
+  background-color: #ffffff;
+}
+
+.button-submit {
+  width: 520px;
+  height: 60px;
+  border-radius: 40px;
+  border-style: none;
+  background-color: #f23c3c;
+  cursor: pointer;
+  font-weight: 700px;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.input-container {
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  width: 520px;
+  height: 60px;
+  margin-bottom: 10px;
+  border-radius: 40px;
+  border: 2px solid #cbcbcb;
+}
+button {
+  margin-bottom: 10px;
+}
+span {
+  color: #cbcbcb;
+}
+.goSignUp {
+  color: #f23c3c;
+}
+
+.image-div {
+  margin-left: 15px;
+  height: 24px;
+}
+.log-input {
+  padding-left: 20px;
+  border-style: none;
+  width: 80%;
+  height: 80%;
+}
+.input-container-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: relative;
+  top: -10px;
+  height: 200px;
+}
