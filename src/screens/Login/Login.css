@@ -82,5 +82,8 @@ span {
   justify-content: space-evenly;
   position: relative;
   top: -10px;
-  height: 200px;
+  height: 300px;
+}
+p {
+  text-align: center;
 }

@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./SignUp.css";
 
 const SignUp = () => {
+  const confirmRef = useRef();
   const navigate = useNavigate();
   const [signupData, setSignupData] = useState({
     email: "",
@@ -42,6 +43,7 @@ const SignUp = () => {
         password: "",
         passwordConfirm: "",
       });
+      confirmRef.current.focus();
     }
   };
   const imageUrl = process.env.PUBLIC_URL + "/어-맛! 로고.png";
@@ -96,6 +98,8 @@ const SignUp = () => {
               <img src="/lock 1.png" alt="lock" />
             </div>
             <input
+              ref={confirmRef}
+              style={{ outlineColor: "red" }}
               className="log-input"
               type="password"
               placeholder="비밀번호"
