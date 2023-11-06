@@ -45,3 +45,7 @@
   right: 10px;
   cursor: pointer;
 }
+
+datalist {
+  background-color: aliceblue;
+}

@@ -88,7 +88,7 @@ import React from "react";
 import Default2 from "../../assets/images/bibim.png";
 import Default1 from "../../assets/images/kal.png";
 import "../Home/Home.css";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav";
 import Searchingbar from "./Searchingbar";
 
 const foodData = [

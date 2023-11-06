@@ -4,7 +4,6 @@ import { Container, Nav, Navbar } from "react-bootstrap";
 
 const navbarContainerStyle = {
   position: "fixed",
-
   width: "100%",
   zIndex: "100",
   opacity: "0.9",
@@ -19,7 +18,12 @@ function NavBar() {
   };
   return (
     <div style={navbarContainerStyle}>
-      <Navbar expand="lg" variant="light" bg="white">
+      <Navbar
+        expand="lg"
+        variant="light"
+        bg="white"
+        style={{ boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)" }}
+      >
         <Container fluid>
           <Navbar.Brand href="/">
             <img
@@ -37,7 +41,7 @@ function NavBar() {
               style={{ marginLeft: "88%", fontWeight: "800" }}
             >
               <li className="nav-item">
-                <a className="nav-link" href="./SearchingList">
+                <a className="nav-link" href="./search">
                   맛집리스트
                 </a>
               </li>
