@@ -1,72 +1,13 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  Nav,
-  Navbar,
-  Container,
-  Form,
-  FormControl,
-  Button,
-} from "react-bootstrap";
-
-/*const navbarContainerStyle = {
-  width: "1920px",
-  flexShrink: 0,
-  background: "#FFF",
-  boxShadow: "0px 2px 9px 0px rgba(0, 0, 0, 0.20)",
-};
-
-const searchBoxStyle = {
-  marginLeft: "180px",
-  width: "772px",
-  height: "43px",
-  flexShrink: 0,
-  borderRadius: "35rem",
-  background: "#FFF",
-  boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.25)",
-};
-
-const searchButtonStyle = {
-  width: "59px",
-  height: "49.6px",
-  marginLeft: "-70px",
-  marginTop: "-3.2px",
-  marginRight: "128px",
-  flexShrink: 0,
-  backgroundImage: "url('/searchBtn.png')",
-  backgroundSize: "cover",
-  border: "none",
-};*/
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 const navbarContainerStyle = {
-  margin: "none",
-  width: "1920px",
-  flexShrink: 0,
-  background: "#FFF",
-  boxShadow: "0px 2px 9px 0px rgba(0, 0, 0, 0.20)",
-};
+  position: "fixed",
 
-const searchBoxStyle = {
-  marginLeft: "180px",
-  width: "70%",
-  height: "43px",
-  flexShrink: 0,
-  borderRadius: "35rem",
-  background: "#FFF",
-  boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.25)",
-};
-
-const searchButtonStyle = {
-  width: "59px",
-  height: "49.6px",
-  marginLeft: "-70px",
-  marginTop: "-3.2px",
-  marginRight: "300px",
-  flexShrink: 0,
-  backgroundImage: "url('/searchBtn.png')",
-  backgroundSize: "cover",
-  border: "none",
+  width: "100%",
+  zIndex: "100",
+  opacity: "0.9",
 };
 
 function NavBar() {
@@ -77,31 +18,24 @@ function NavBar() {
     setIsLoggedIn(false);
   };
   return (
-    <Container style={navbarContainerStyle}>
+    <div style={navbarContainerStyle}>
       <Navbar expand="lg" variant="light" bg="white">
-        <Container>
+        <Container fluid>
           <Navbar.Brand href="/">
             <img
               src="/logo.png"
               alt="logo"
-              width="65"
-              height="65"
-              style={{ borderRadius: "10px" }}
+              width="50"
+              height="50"
+              style={{ borderRadius: "10px", marginLeft: "100%" }}
             />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Form className="d-flex me-auto">
-              <FormControl
-                type="search"
-                placeholder="지역, 식당 또는 음식"
-                className="me-2"
-                style={searchBoxStyle}
-                aria-label="Search"
-              />
-              <Button variant="white" type="submit" style={searchButtonStyle} />
-            </Form>
-            <Nav className="me-auto">
+            <Nav
+              className="me-auto"
+              style={{ marginLeft: "88%", fontWeight: "800" }}
+            >
               <li className="nav-item">
                 <a className="nav-link" href="./SearchingList">
                   맛집리스트
@@ -124,7 +58,7 @@ function NavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-    </Container>
+    </div>
   );
 }
 
