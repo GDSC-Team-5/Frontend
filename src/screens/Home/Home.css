@@ -1,55 +1,87 @@
-.main-bg {
-  background-size: cover;
-  background-position: center;
-  height: 700px;
-  padding: 0;
+.list {
+  width: 91%; /* 예: 원하는 너비로 조절 */
+}
+.listText {
+  color: #f23c3c;
+  font-size: 24px;
+  font-weight: 600;
+  margin-left: 5%;
+  margin-top: 5%;
 }
 
-#topText{
-  padding: 50px;
-  color: #F23C3C;
-  ;
-}
-
-#list{
-  list-style-type: none;
+.foodList {
   display: flex;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-/* #ImgTextContainer{
+  margin-top: 1.1%;
   position: relative;
+  left: 5%;
 }
 
-#restaurantText{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
-
-.user-wrap {
-  /* display: flex; */
-  width: 100%;
-  margin: 10px auto;
+.foodItem {
   position: relative;
-  display:inline-block;
+  flex: 100%;
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center; /* 세로 중앙 정렬 */
 }
 
-.user-wrap img {
-  width: 90%;
-  vertical-align: middle;
-}
-
-.user-text {
-  position: absolute;
-  top: 40%;
-  left: 45%;
+.foodItem > img {
   width: 100%;
-  transform: translate(-50%, -50%);
-  font-size: large;
-  color: white;
-  text-shadow: 2px 2px 2px black;
+}
+
+.foodInfo {
+  position: absolute;
+  width: 100%;
   text-align: center;
+  margin-top: 8%;
+  color: #fff;
+  font-size: 44px;
+  font-weight: 400;
+  text-shadow: 2px 2px 2px black;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+p {
+  font-size: 24px;
+}
+
+.foodList2 {
+  display: flex;
+  margin-top: 1%;
+  width: 101.2%;
+  position: relative;
+  left: 5%;
+  right: 5%;
+
+  justify-content: space-between; /* 이미지 사이에 공간을 균일하게 배분합니다. */
+  align-items: center;
+}
+
+.foodItem2 {
+  position: relative;
+  flex: 25%;
+  display: flex;
+  flex-direction: column; /* 내부 컨텐츠를 세로로 정렬하기 위해 */
+}
+
+.foodItem2 > img {
+  width: 95%;
+}
+
+.foodInfo2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* 내부 컨텐츠를 세로 중앙 정렬 */
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px black;
 }

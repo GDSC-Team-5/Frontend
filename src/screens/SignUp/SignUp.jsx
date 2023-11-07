@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import "./SignUp.css";
 
 const SignUp = () => {
+  const confirmRef = useRef();
   const navigate = useNavigate();
   const [signupData, setSignupData] = useState({
     email: "",
@@ -17,11 +18,14 @@ const SignUp = () => {
   const handleSubmit = async () => {
     if (signupData.password === signupData.passwordConfirm) {
       try {
-        const response = await axios.post("baseURL/members/signup", {
-          email: signupData.email,
-          password: signupData.password,
-          nickName: signupData.nickName,
-        });
+        const response = await axios.post(
+          "http://semtle.catholic.ac.kr:8082/members/signup",
+          {
+            name: signupData.name,
+            email: signupData.email,
+            password: signupData.password,
+          }
+        );
         console.log("response 응답값", response);
         // 응답으로 accessToken이 반환됨. 바로 홈으로 보냄
         navigate("/login");
@@ -42,8 +46,10 @@ const SignUp = () => {
         password: "",
         passwordConfirm: "",
       });
+      confirmRef.current.focus();
     }
   };
+
   const imageUrl = process.env.PUBLIC_URL + "/어-맛! 로고.png";
 
   return (
@@ -96,6 +102,8 @@ const SignUp = () => {
               <img src="/lock 1.png" alt="lock" />
             </div>
             <input
+              ref={confirmRef}
+              style={{ outlineColor: "red" }}
               className="log-input"
               type="password"
               placeholder="비밀번호"
@@ -135,7 +143,7 @@ const SignUp = () => {
 
           <div>
             <span>이미 계정이 있으신가요? </span>&nbsp;
-            <Link to="/login">
+            <Link to="/login" style={{ textDecoration: "none" }}>
               <span className="goSignUp">로그인</span>
             </Link>
           </div>
