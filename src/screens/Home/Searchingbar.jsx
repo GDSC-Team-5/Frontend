@@ -3,7 +3,8 @@ import mainBackgroundImg from "../../assets/images/mainBackground.jpg";
 import "./Searchingbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Form, FormControl, Button } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const searchBoxStyle = {
   marginLeft: "25%",
@@ -38,11 +39,22 @@ function Searchingbar() {
     "대전",
   ]);
 
-  const navigate = useNavigate();
-
-  const handleSearch = () => {
-    navigate(`/search?location=${location}`);
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://semtle.catholic.ac.kr:8082/search/${location}`
+      );
+      console.log("검색성공:", response.data);
+    } catch (error) {
+      console.error("에러:", error);
+    }
   };
+
+  // const navigate = useNavigate();
+
+  // const handleSearch = () => {
+  //   navigate(`/search?location=${location}`);
+  // };
 
   return (
     <div id="main-wrap">
@@ -69,7 +81,7 @@ function Searchingbar() {
           </datalist>
           <Button
             variant="white"
-            type="submit"
+            // type="submit"
             style={searchButtonStyle}
             onClick={handleSearch}
           />
