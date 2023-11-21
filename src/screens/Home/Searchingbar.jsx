@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import mainBackgroundImg from "../../assets/images/mainBackground.jpg";
 import "./Searchingbar.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Form, FormControl, Button } from "react-bootstrap";
-// import { useNavigate } from "react-router-dom";
+import { Form, FormControl } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 
 const searchBoxStyle = {
   marginLeft: "25%",
@@ -30,31 +31,25 @@ const searchButtonStyle = {
 
 function Searchingbar() {
   const [location, setLocation] = useState("");
-  const [datalist, setDatalist] = useState([
-    "서울",
-    "부산",
-    "대구",
-    "인천",
-    "광주",
-    "대전",
-  ]);
 
-  const handleSearch = async () => {
-    try {
-      const response = await axios.get(
-        `http://semtle.catholic.ac.kr:8082/search/${location}`
-      );
-      console.log("검색성공:", response.data);
-    } catch (error) {
-      console.error("에러:", error);
-    }
-  };
-
-  // const navigate = useNavigate();
-
-  // const handleSearch = () => {
-  //   navigate(`/search?location=${location}`);
+  // const handleSearch = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `http://semtle.catholic.ac.kr:8082/search/${location}`
+  //     );
+  //     if (response.data) {
+  //       console.log("검색성공:", response.data);
+  //     }
+  //   } catch (error) {
+  //     console.error("에러:", error);
+  //   }
   // };
+
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate(`/search?location=${location}`);
+  };
 
   return (
     <div id="main-wrap">
@@ -72,13 +67,7 @@ function Searchingbar() {
             value={location}
             onChange={(e) => setLocation(e.target.value)}
           />
-          <datalist id="locations">
-            {" "}
-            {/* 데이터리스트의 id를 연결 */}
-            {datalist.map((item, index) => (
-              <option key={index} value={item} />
-            ))}
-          </datalist>
+
           <Button
             variant="white"
             // type="submit"

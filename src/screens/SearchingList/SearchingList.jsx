@@ -27,7 +27,9 @@ function SearchingList() {
         </h3>
         <div>
           {searchResults.length === 0 ? (
-            <p>검색 결과가 없습니다.</p>
+            <p style={{ position: "absolute", top: "18%" }}>
+              검색 결과가 없습니다.
+            </p>
           ) : (
             searchResults.map((result) => (
               <div key={result.id}>
