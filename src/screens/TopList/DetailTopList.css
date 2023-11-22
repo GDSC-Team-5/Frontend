@@ -1,0 +1,45 @@
+.detailTitle {
+  position: relative;
+  top: 171px;
+  text-align: center;
+  color: #f23c3c;
+}
+
+.line {
+  position: relative;
+  top: 343px;
+}
+
+.detailSubTitle {
+  position: relative;
+  top: 264px;
+  text-align: center;
+  color: black;
+}
+
+.line {
+  width: 80%;
+  left: 10%;
+}
+
+.line2 {
+  width: 70%;
+  left: 15%;
+  position: relative;
+  top: 416px;
+}
+
+.BestListItem > img {
+  position: relative;
+  top: 456px;
+  left: 15%;
+  margin-bottom: 5%;
+}
+
+.BestListItem > .BestText {
+  position: relative;
+  top: 270px;
+  left: 17%;
+  color: black;
+  font-size: x-large;
+}

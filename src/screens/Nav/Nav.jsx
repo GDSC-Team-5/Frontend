@@ -41,7 +41,7 @@ function NavBar() {
               style={{ marginLeft: "88%", fontWeight: "800" }}
             >
               <li className="nav-item">
-                <a className="nav-link" href="./search">
+                <a className="nav-link" href="./top_lists">
                   맛집리스트
                 </a>
               </li>
