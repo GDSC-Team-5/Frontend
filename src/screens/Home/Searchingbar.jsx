@@ -29,8 +29,8 @@ const searchButtonStyle = {
   border: "none",
 };
 
-function Searchingbar() {
-  const [location, setLocation] = useState("");
+function Searchingbar({ setLocation, location, handleSearch }) {
+  // const [location, setLocation] = useState("");
 
   // const handleSearch = async () => {
   //   try {
@@ -45,11 +45,11 @@ function Searchingbar() {
   //   }
   // };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const handleSearch = () => {
-    navigate(`/search?location=${location}`);
-  };
+  // const handleSearch = () => {
+  //   navigate(`/search?location=${location}`);
+  // };
 
   return (
     <div id="main-wrap">

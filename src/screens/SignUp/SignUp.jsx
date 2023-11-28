@@ -113,29 +113,40 @@ const SignUp = () => {
               }
             />
           </div>
-          <div className="input-container">
-            <div className="image-div">
-              <img src="/lock 1.png" alt="lock" />
+          <div style={{ position: "relative" }}>
+            <div className="input-container">
+              <div className="image-div">
+                <img src="/lock 1.png" alt="lock" />
+              </div>
+              <input
+                className="log-input"
+                type="password"
+                placeholder="비밀번호 확인"
+                value={signupData.passwordConfirm}
+                onChange={(e) =>
+                  setSignupData({
+                    ...signupData,
+                    passwordConfirm: e.target.value,
+                  })
+                }
+              />
             </div>
-            <input
-              className="log-input"
-              type="password"
-              placeholder="비밀번호 확인"
-              value={signupData.passwordConfirm}
-              onChange={(e) =>
-                setSignupData({
-                  ...signupData,
-                  passwordConfirm: e.target.value,
-                })
-              }
-            />
+            {passwordMatch && (
+              <p
+                className="alert"
+                style={{
+                  color: "red",
+                  position: "absolute",
+                  top: "68%",
+                  fontSize: "1em",
+                }}
+              >
+                * 비밀번호가 일치하지 않습니다.
+              </p>
+            )}
           </div>
-          {passwordMatch && (
-            <p className="alert" style={{ color: "red" }}>
-              * 비밀번호가 일치하지 않습니다.
-            </p>
-          )}
-          <div>
+
+          <div style={{ position: "relative", top: "10px" }}>
             <button className="button-submit" onClick={handleSubmit}>
               가입하기
             </button>

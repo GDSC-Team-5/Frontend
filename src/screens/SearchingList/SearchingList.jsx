@@ -3,20 +3,8 @@ import axios from "axios";
 import Nav from "../Nav/Nav";
 import { useParams } from "react-router-dom";
 
-function SearchingList() {
-  const [searchResults, setSearchResults] = useState([]);
-  const { location } = useParams();
-
-  useEffect(() => {
-    axios
-      .get(`/search/${location}`)
-      .then((response) => {
-        setSearchResults(response.data);
-      })
-      .catch((error) => {
-        console.error("Error fetching search results:", error);
-      });
-  }, [location]);
+function SearchingList({ searchinglist, location }) {
+  const searchResults = searchinglist;
 
   return (
     <div>
