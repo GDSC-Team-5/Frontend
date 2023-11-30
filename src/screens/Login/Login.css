@@ -80,7 +80,7 @@ span {
 .input-container-parent {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   position: relative;
   top: -10px;
   height: 300px;

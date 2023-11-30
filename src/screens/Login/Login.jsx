@@ -30,10 +30,10 @@ const Login = () => {
       }
     } catch (error) {
       console.error("로그인 실패:", error);
+      setLoginConfirm(true);
       // navigate("/login");
       // window.alert(`"로그인에 실패했습니다. 다시 시도해 주세요."`);
     }
-    setLoginConfirm(true);
     setLoginData({ email: "", password: "" });
   };
   return (
@@ -55,6 +55,7 @@ const Login = () => {
             <div
               className="onlyInput
             "
+              style={{ position: "relative" }}
             >
               <div className="input-container">
                 <div className="image-div">
@@ -84,13 +85,20 @@ const Login = () => {
                   }
                 />
               </div>
+              {loginConfirm && (
+                <p
+                  style={{
+                    color: "#F23C3C",
+                    fontSize: "18px",
+                    position: "absolute",
+                    left: "7px",
+                  }}
+                >
+                  * 이메일 또는 비밀번호를 다시 확인하세요
+                </p>
+              )}
             </div>
 
-            {loginConfirm && (
-              <p style={{ color: "#F23C3C" }}>
-                * 이메일 또는 비밀번호를 다시 확인하세요
-              </p>
-            )}
             <div>
               <button className="button-submit" onClick={handleSubmit}>
                 로그인
