@@ -19,7 +19,7 @@ const SignUp = () => {
     if (signupData.password === signupData.passwordConfirm) {
       try {
         const response = await axios.post(
-          "http://semtle.catholic.ac.kr:8082/members/signup",
+          "http://taste.suitestudy.com:8082/members/signup",
           {
             name: signupData.name,
             email: signupData.email,
@@ -53,7 +53,7 @@ const SignUp = () => {
   const imageUrl = process.env.PUBLIC_URL + "/어-맛! 로고.png";
 
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ minWidth: "600px" }}>
       <div className="content">
         <div className="icon">
           <Link to="/">

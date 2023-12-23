@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 import Nav from "../Nav/Nav";
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 
 function SearchingList({ searchinglist, location }) {
   const searchResults = searchinglist;

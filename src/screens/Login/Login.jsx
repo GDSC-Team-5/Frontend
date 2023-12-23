@@ -13,14 +13,13 @@ const Login = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post(
-        "http://semtle.catholic.ac.kr:8082/members/login",
+        "http://taste.suitestudy.com:8082/members/login",
         loginData
       );
       // response 확인용 출력(확인 후 삭제)
 
       if (response.data) {
         console.log(`response.data:`, response.data);
-        console.log(`data:`, response);
         console.log("로그인 성공!");
         const { accessToken, refreshToken } = response.data;
         Cookies.set("accessToken", accessToken, { expires: 7 });
@@ -37,7 +36,7 @@ const Login = () => {
     setLoginData({ email: "", password: "" });
   };
   return (
-    <div className="wrapper">
+    <div className="wrapper" style={{ minWidth: "600px" }}>
       <div className="content">
         <div className="icon">
           <Link to="/">

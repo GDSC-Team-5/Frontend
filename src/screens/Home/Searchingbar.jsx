@@ -6,6 +6,8 @@ import { Form, FormControl } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import { useRecoilState } from "recoil";
+import { locationState, locationResponseState } from "../../recoil/atoms";
 
 const searchBoxStyle = {
   marginLeft: "25%",
@@ -29,7 +31,7 @@ const searchButtonStyle = {
   border: "none",
 };
 
-function Searchingbar({ setLocation, location, handleSearch }) {
+function Searchingbar() {
   // const [location, setLocation] = useState("");
 
   // const handleSearch = async () => {
@@ -50,6 +52,22 @@ function Searchingbar({ setLocation, location, handleSearch }) {
   // const handleSearch = () => {
   //   navigate(`/search?location=${location}`);
   // };
+
+  const [location, setLocation] = useRecoilState(locationState);
+  const [locationRes, setLocationRes] = useRecoilState(locationResponseState);
+  console.log(location);
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://taste.suitestudy.com:8082/search/${location}`
+      );
+      console.log("검색성공:", response.data);
+      setLocationRes(response.data);
+    } catch (error) {
+      console.error("에러:", error);
+    }
+  };
 
   return (
     <div id="main-wrap">

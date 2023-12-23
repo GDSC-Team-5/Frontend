@@ -128,15 +128,11 @@ const restaurantData = [
   },
 ];
 
-function Home({ setLocation, location, handleSearch }) {
+function Home() {
   return (
     <div>
       <Nav />
-      <Searchingbar
-        setLocation={setLocation}
-        location={location}
-        handleSearch={handleSearch}
-      />
+      <Searchingbar />
       <div className="list">
         <text className="listText">어맛! 소리 나는 맛집 리스트</text>
         <div className="foodList">
