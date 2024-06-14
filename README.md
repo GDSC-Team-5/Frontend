@@ -6,7 +6,10 @@
 
 
 <br>
-
+## 피그마 설계도
+'''
+https://www.figma.com/design/fYVISuQDhwYMrAFM60fC7R/%EC%96%B4-%EB%A7%9B!-(A-Taste!)?node-id=0-1&t=ylgQpES5JoWTsmdt-1
+'''
 
 ## 1️⃣ 프로젝트 소개
 - 어-맛! 프로젝트는 망고플레이트 웹사이트의 기능을 구현합니다.
